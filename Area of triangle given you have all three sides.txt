@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Mathmatical_Formulas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("This Program will calculate the Area of a triange. The sides of the triange MUST BE GREATER THAN 0!");
+            Console.WriteLine("\nInput Side A");
+            Double sideA = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nInput Side B");
+            Double sideB = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nInput Side C");
+            Double sideC = Convert.ToDouble(Console.ReadLine());
+            Double P = (sideA + sideB + sideC) / 2;
+            Double Area = Math.Sqrt((P * (P - sideA) * (P - sideB) * (P - sideC)));
+            Console.WriteLine($"\nArea {Area}");
+            Console.ReadLine();
+	}
+    }
+}

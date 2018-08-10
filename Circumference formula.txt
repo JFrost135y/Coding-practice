@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Mathmatical_Formulas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("This Program will calculate the Circumference and Area of a circle");
+            Console.WriteLine("Input radius value. MUST BE GREATER THAN 0!");
+            Double radius = Convert.ToDouble(Console.ReadLine());
+            Double Cir = 2 * radius * Math.PI;
+            Console.WriteLine($"Circumference is {Cir}");
+            Console.ReadLine();
+            Double A = Math.PI * Math.Pow(radius, 2);
+            Console.WriteLine($"Area is {A}");
+            Console.ReadLine();
+	}
+    }
+}

@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Mathmatical_Formulas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("This Program will calculate the Volume of a hemisphere");
+            Console.WriteLine("Input radius value. MUST BE GREATER THAN 0!");
+            Double r = Convert.ToDouble(Console.ReadLine());
+            Double Vol = (((4.0 / 3) * (Math.PI) * (Math.Pow(r, 3)) / 2));
+            Console.WriteLine($"Volume is {Vol}");
+            Console.ReadLine();
+	}
+    }
+}
