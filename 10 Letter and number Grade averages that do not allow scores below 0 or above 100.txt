@@ -1,0 +1,163 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Calculating_Averages
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c, d, e, f, g, h, i, j, x, sum;
+            string gradeaverage;// = " ";
+            Console.WriteLine("This program will give the average number and letter grade for ten assignment");
+
+            retrypoint1:
+            Console.WriteLine("\nInput 1st number grade");
+            a = Convert.ToDouble(Console.ReadLine());
+
+            if (a > 100 || a < 0)     
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint1;
+            }
+
+            retrypoint2:
+            Console.WriteLine("\nInput 2nd number grade");
+            b = Convert.ToDouble(Console.ReadLine());
+
+            if (b > 100 || b < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint2;
+            }
+
+            retrypoint3:
+            Console.WriteLine("\nInput 3rd number grade");
+            c = Convert.ToDouble(Console.ReadLine());
+
+            if (c > 100 || c < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint3;
+            }
+
+            retrypoint4:
+            Console.WriteLine("\nInput 4th number grade");
+            d = Convert.ToDouble(Console.ReadLine());
+
+            if (d > 100 || d < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint4;
+            }
+
+            retrypoint5:
+            Console.WriteLine("\nInput 5th number grade");
+            e = Convert.ToDouble(Console.ReadLine());
+
+            if (e > 100 || e < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint5;
+            }
+
+            retrypoint6:
+            Console.WriteLine("\nInput 6th number grade");
+            f = Convert.ToDouble(Console.ReadLine());
+
+            if (f > 100 || f < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint6;
+            }
+
+            retrypoint7:
+            Console.WriteLine("\nInput 7th number grade");
+            g = Convert.ToDouble(Console.ReadLine());
+
+            if (g > 100 || g < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 greater than 100!");
+                goto retrypoint7;
+            }
+
+            retrypoint8:
+            Console.WriteLine("\nInput 8th number grade");
+            h = Convert.ToDouble(Console.ReadLine());
+
+            if (h > 100 || h < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint8;
+            }
+
+            retrypoint9:
+            Console.WriteLine("\nInput 9th number grade");
+            i = Convert.ToDouble(Console.ReadLine());
+
+            if (i > 100 || i < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint9;
+            }
+
+            retrypoint10:
+            Console.WriteLine("\nInput 10th number grade");
+            j = Convert.ToDouble(Console.ReadLine());
+
+            if (j > 100 || j < 0)
+            {
+                Console.WriteLine("Value cannot be less than 0 or greater than 100!");
+                goto retrypoint10;
+            }
+
+            sum = a + b + c + d + e + f + g + h + i + j;
+            x = sum / 10;
+
+            if (x < 70)
+                gradeaverage = "F";
+
+            else if (x == 70)
+                gradeaverage = "D";
+
+            else if (x > 70 && x < 74)
+                gradeaverage = "C-";
+
+            else if (x > 73 && x < 77)
+                gradeaverage = "C";
+
+            else if (x > 76 && x < 80)
+                gradeaverage = "C+";
+
+            else if (x > 79 && x < 84)
+                gradeaverage = "B-";
+
+            else if (x > 83 && x < 87)
+                gradeaverage = "B";
+
+            else if (x > 86 && x < 90)
+                gradeaverage = "B+";
+
+            else if (x > 89 && x < 94)
+                gradeaverage = "A-";
+
+            else if (x > 93 && x < 97)
+                gradeaverage = "A";
+
+            else if (x > 96 && x < 100)
+                gradeaverage = "A+";
+
+            else
+                gradeaverage = " ";
+
+
+            Console.WriteLine($"\nSum is {sum}");
+            Console.WriteLine($"\nAverage number grade {x}");
+            Console.WriteLine($"\nAverage letter grade {gradeaverage}");
+            Console.ReadLine();
+        }
+    }
+}
