@@ -1,0 +1,205 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ISTA_220_Excercise_4A_Creating_a_Farm
+{
+    class Farm
+    {
+        static void Main(string[] args)
+        {
+            Sheep sheep = new Sheep("I am a Sheep!", "Hi! My name is Lilly!");
+            Console.WriteLine(sheep.Type);
+            Console.WriteLine(sheep.Name);
+            Console.WriteLine(sheep.Speak());
+            Console.WriteLine(sheep.Eat());
+            Console.WriteLine(sheep.Product());
+            Console.WriteLine(sheep.Legs());
+
+            Cow cow = new Cow("\nI am a Cow!", "Hi! My name is Doug!");
+            Console.WriteLine(cow.Type);
+            Console.WriteLine(cow.Name);
+            Console.WriteLine(cow.Speak());
+            Console.WriteLine(cow.Eat());
+            Console.WriteLine(cow.Product());
+            Console.WriteLine(cow.Legs());
+
+            Pig pig = new Pig("\nI am a Pig!", "Hi! My name is Lena!");
+            Console.WriteLine(pig.Type);
+            Console.WriteLine(pig.Name);
+            Console.WriteLine(pig.Speak());
+            Console.WriteLine(pig.Eat());
+            Console.WriteLine(pig.Product());
+            Console.WriteLine(pig.Legs());
+
+            Horse horse = new Horse("\nI am a Horse!", "Hi! My name is Polly!");
+            Console.WriteLine(horse.Type);
+            Console.WriteLine(horse.Name);
+            Console.WriteLine(horse.Speak());
+            Console.WriteLine(horse.Eat());
+            Console.WriteLine(horse.Product());
+            Console.WriteLine(horse.Legs());
+            Console.ReadLine();
+        }
+    }
+}
+
+amespace ISTA_220_Excercise_4A_Creating_a_Farm
+{
+    public class Animal
+    {
+        public Animal(string type, string name)
+        {
+            this.Type = type;
+            this.Name = name;
+        }
+        public Animal()
+        {
+            this.Type = "Type of Animal";
+
+        }
+
+        public String Name { get; set; }
+        public String Type { get; set; }
+
+        public virtual string Speak()
+        {
+            return "What noise the animal makes";
+        }
+        public virtual string Eat()
+        {
+            return "What the animal eats";
+        }
+        public virtual string Product()
+        {
+            return "What the animal is used for";
+        }
+        public virtual string Legs()
+        {
+            return "The number of legs";
+        }
+        public void Getname()
+        {
+
+            Console.WriteLine(this.Type);
+        }
+    }
+}
+
+namespace ISTA_220_Excercise_4A_Creating_a_Farm
+{
+   public class Sheep: Animal
+    {
+
+        public Sheep(string type, string name):base(type, name)
+        {
+
+        }
+
+        public override string Speak()
+        {
+            return "I make the sound 'Baa!'";
+        }
+        public override string Eat()
+        {
+            return  "I eat 'Grass!'";
+        }
+        public override string Product()
+        {
+            return "I am used for 'Wool!'";
+        }
+        public override string Legs()
+        {
+            return "I have '4 Legs!'";
+        }
+    }
+}
+
+namespace ISTA_220_Excercise_4A_Creating_a_Farm
+{
+    
+   public class Cow : Animal
+   {
+
+            public Cow(string type, string name) : base(type, name)
+            {
+
+            }
+
+            public override string Speak()
+            {
+                return "I make the sound 'Moo!'";
+            }
+            public override string Eat()
+            {
+                return "I eat 'Grass!'";
+            }
+            public override string Product()
+            {
+                return "I am used for 'Dairy Products!'";
+            }
+            public override string Legs()
+            {
+                return "I have '4 Legs!'";
+            }
+   }
+}
+
+namespace ISTA_220_Excercise_4A_Creating_a_Farm
+{
+    public class Pig : Animal
+    {
+
+        public Pig(string type, string name) : base(type, name)
+        {
+
+        }
+
+        public override string Speak()
+        {
+            return "I make the sound 'Oink!'";
+        }
+        public override string Eat()
+        {
+            return "I eat 'Corn!'";
+        }
+        public override string Product()
+        {
+            return "I am used for 'Pork!'";
+        }
+        public override string Legs()
+        {
+            return "I have '4 Legs!'";
+        }
+    }
+}
+
+namespace ISTA_220_Excercise_4A_Creating_a_Farm
+{
+    public class Horse : Animal
+    {
+        public Horse(string type, string name) : base(type, name)
+        {
+
+        }
+
+        public override string Speak()
+        {
+            return "I make the sound 'Neigh!'";
+        }
+        public override string Eat()
+        {
+            return "I eat 'Hay!'";
+        }
+        public override string Product()
+        {
+            return "I am used for 'Travel!'";
+        }
+        public override string Legs()
+        {
+            return "I have '4 Legs!'";
+        }
+    }
+}

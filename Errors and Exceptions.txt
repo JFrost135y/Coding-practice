@@ -1,0 +1,210 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ISTA_220_Exercise_3A__Errors_and_Exceptions
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Select one of the numbers for the operation you want to do:");
+            Console.WriteLine("[1] - Perimeter and Area of Triangle");
+            Console.WriteLine("[2] - Volume of Hemisphere");
+            Console.WriteLine("[3] - Circumference and Area of Circle");
+            Console.WriteLine("[4] - Quadradic Equation");
+            Console.WriteLine("[Q] - Quit");
+            checked
+            {
+                try
+                {
+                    string operationnumber = Console.ReadLine();
+
+                    switch (operationnumber)
+                    {
+                        case "1":
+                            Console.WriteLine("\nCalculating the Area of a Tringle: ");
+                            Console.WriteLine("\nInput side A length: ");
+                            Double sideA = Convert.ToDouble(Console.ReadLine());
+
+                            while (sideA <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input side A length: ");
+                                sideA = Convert.ToDouble(Console.ReadLine());
+                            }
+
+                            Console.WriteLine("\nInput side B length: ");
+                            Console.WriteLine("\nRe-input side A lengeth: ");
+                            Double sideB = Convert.ToDouble(Console.ReadLine());
+
+                            while (sideB <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input side B length: ");
+                                sideB = Convert.ToDouble(Console.ReadLine());
+                            }
+
+
+
+                            Console.WriteLine("\nInput side C length: ");
+                            Double sideC = Convert.ToDouble(Console.ReadLine());
+
+                            while (sideC <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input side C length: ");
+                                sideC = Convert.ToDouble(Console.ReadLine());
+                            }
+
+                            AreaofTriangle(sideA, sideB, sideC);
+                            Console.ReadLine();
+
+                            break;
+
+
+
+                        case "2":
+
+                            Console.WriteLine("\nCalculating the Volume of a Hemisphere");
+                            Console.WriteLine("\nInput Radius Value: ");
+
+                            Double radius = Convert.ToDouble(Console.ReadLine());
+
+                            while (radius <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input radius value: ");
+                                radius = Convert.ToDouble(Console.ReadLine());
+                            }
+
+                            VolumeofHemisphere(radius);
+                            Console.ReadLine();
+
+                            break;
+
+
+                        case "3":
+
+                            Console.WriteLine("\nCalculating the Area and Circumference of a Circle");
+                            Console.WriteLine("\nInput Radius Value: ");
+
+                            Double rad = Convert.ToDouble(Console.ReadLine());
+
+                            while (rad <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input radius value: ");
+                                rad = Convert.ToDouble(Console.ReadLine());
+                            }
+
+
+                            CircumferenceandAreaofCircle(rad);
+                            Console.ReadLine();
+
+                            break;
+
+                        case "4":
+
+                            Console.WriteLine("\nUsing the Quadradic equation");
+                            Console.WriteLine("\nGiven ax^2+bx+c=0 input the coefficients accourdingly");
+
+                            Console.WriteLine("\nInput value for a:");
+                            Double a = Convert.ToDouble(Console.ReadLine());
+
+                            while (a <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input value for a: ");
+                                a = Convert.ToDouble(Console.ReadLine());
+                            }
+
+                            Console.WriteLine("\nInput value for b:");
+                            Double b = Convert.ToDouble(Console.ReadLine());
+
+                            while (b <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input value for b: ");
+                                b = Convert.ToDouble(Console.ReadLine());
+                            }
+
+                            Console.WriteLine("\nInput value for c:");
+                            Double c = Convert.ToDouble(Console.ReadLine());
+
+                            while (c <= 0)
+                            {
+                                Console.WriteLine("\nValue cannot be less than or equal to zero!");
+                                Console.WriteLine("\nRe-input value for c: ");
+                                c = Convert.ToDouble(Console.ReadLine());
+                            }
+
+                            QuadradicFormula(a, b, c);
+                            Console.ReadLine();
+                            break;
+
+                        default:
+                            Console.WriteLine("Goodbye!");
+                            Console.ReadLine();
+                            Environment.Exit(0);
+                            break;
+                    }
+                }
+                catch (FormatException FEXC)
+                {
+                    Console.WriteLine(FEXC.Message);
+                }
+                catch (DivideByZeroException DBZE)
+                {
+                    Console.WriteLine(DBZE.Message);
+                }
+                catch (OverflowException OFE)
+                {
+                    Console.WriteLine(OFE.Message);
+                }
+                catch (Exception E)
+                {
+                    Console.WriteLine(E.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("\nHave a nice life!");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        static void AreaofTriangle(double sideA, double sideB, double sideC)
+        {
+            double Perimeter = (sideA + sideB + sideC) / 2;
+            decimal Area = Convert.ToDecimal(Math.Sqrt((Perimeter * (Perimeter - sideA) * (Perimeter - sideB) * (Perimeter - sideC))));
+            Console.WriteLine($"\nThe Perimeter of the Triangle is {Perimeter:0.00}");
+            Console.WriteLine($"\nThe Area of the Triangle is {Area:0.00}");
+
+        }
+        static void VolumeofHemisphere(double radius)
+        {
+            decimal Volume = Convert.ToDecimal(((4.0 / 3) * (Math.PI) * (Math.Pow(radius, 3))) / 2);
+            Console.WriteLine($"\nVolume of the Hemisphere is {Volume:0.00}");
+        }
+        static void CircumferenceandAreaofCircle(double radius)
+        {
+            decimal Circumference = Convert.ToDecimal(2 * radius * Math.PI);
+            decimal Area = Convert.ToDecimal(Math.PI * Math.Pow(radius, 2));
+            Console.WriteLine($"\nThe Circumference is {Circumference:0.00}");
+            Console.WriteLine($"\nThe Area is {Area:0.00}");
+
+        }
+        static void QuadradicFormula(double a, double b, double c)
+        {
+            decimal x1 = Convert.ToDecimal(((-b) + (Math.Sqrt((Math.Pow(b, 2)) - (4 * a * c)))) / (2 * a));
+            decimal x2 = Convert.ToDecimal(((-b) - (Math.Sqrt((Math.Pow(b, 2)) - (4 * a * c)))) / (2 * a));
+
+            Console.WriteLine($"\nFirst value of x is: {x1:0.00}");
+            Console.WriteLine($"\nSecond value of x is: {x2:0.00}");
+        }
+    }
+}

@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Calculating_Averages_Advanced
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String number;
+            String gradeaverage;
+            double total = 0;
+            int numbers = 0;
+            
+
+            Console.WriteLine("Please Enter a testscore!");
+
+                while ((number = Console.ReadLine()) != "")
+            { 
+                total += double.Parse(number);
+                numbers++;
+                Console.WriteLine("\nPlease Enter a TestScore! If no more test scores hit ENTER!");
+            }
+            
+            Console.WriteLine("The average number grade is {0}", total / numbers);
+
+            if (total / numbers < 70)
+                gradeaverage = "F";
+
+            else if (total / numbers == 70)
+                gradeaverage = "D";
+
+            else if (total / numbers > 70 && total / numbers < 74)
+                gradeaverage = "C-";
+
+            else if (total / numbers > 73 && total / numbers < 77)
+                gradeaverage = "C";
+
+            else if (total / numbers > 76 && total / numbers < 80)
+                gradeaverage = "C+";
+
+            else if (total / numbers > 79 && total / numbers < 84)
+                gradeaverage = "B-";
+
+            else if (total / numbers > 83 && total / numbers < 87)
+                gradeaverage = "B";
+
+            else if (total / numbers > 86 && total / numbers < 90)
+                gradeaverage = "B+";
+
+            else if (total / numbers > 89 && total / numbers < 94)
+                gradeaverage = "A-";
+
+            else if (total / numbers > 93 && total / numbers < 97)
+                gradeaverage = "A";
+
+            else if (total / numbers > 96 && total / numbers < 100)
+                gradeaverage = "A+";
+
+            else gradeaverage = " ";
+
+            Console.WriteLine($"\nAverage letter grade {gradeaverage}");
+
+            Console.ReadLine();
+        }
+    }
+}
