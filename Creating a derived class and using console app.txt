@@ -1,0 +1,71 @@
+using System.Text;
+using System.Threading.Tasks;
+using ISTA_220_Lab_4C_Design_a_class_CAR;
+
+namespace CarConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Car car = new Car(2015, "Toyota");
+
+            Console.WriteLine(car.GetCar());
+
+            Console.WriteLine(car.Speed);
+
+            for (int i = 0; i < 5; i++)
+            {
+                car.Accelerate();
+                Console.WriteLine(car.Speed);
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                car.Brake();
+                Console.WriteLine(car.Speed);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+
+
+using System;
+
+namespace ISTA_220_Lab_4C_Design_a_class_CAR
+{
+    public class Car
+    {
+    public Car(int yearmodel, string make)
+        {
+            this.YearModel = yearmodel;
+            this.Make = make;
+            this.Speed = 0;
+        }
+    public Car()
+        {
+            this.Speed = 0;
+        }
+
+    public int YearModel { get; set; }
+
+    public string Make { get; set;  }
+
+    public int Speed { get; set; }
+
+    public void Accelerate()
+        {
+            this.Speed += 5;
+        }
+    public void Brake()
+        {
+            this.Speed -= 5;
+        }
+    public string GetCar()
+        {
+            return this.YearModel + " " + this.Make + "'s Initial Speed is: " + this.Speed; 
+        }
+    }
+}
+
