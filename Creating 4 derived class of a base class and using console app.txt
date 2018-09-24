@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ISTA_220_Excercise_4A_Creating_a_Farm
+namespace Creating_a_Farm
 {
     class Farm
     {
@@ -46,7 +46,7 @@ namespace ISTA_220_Excercise_4A_Creating_a_Farm
     }
 }
 
-amespace ISTA_220_Excercise_4A_Creating_a_Farm
+namespace Creating_a_Farm
 {
     public class Animal
     {
@@ -88,7 +88,7 @@ amespace ISTA_220_Excercise_4A_Creating_a_Farm
     }
 }
 
-namespace ISTA_220_Excercise_4A_Creating_a_Farm
+namespace Creating_a_Farm
 {
    public class Sheep: Animal
     {
@@ -117,7 +117,7 @@ namespace ISTA_220_Excercise_4A_Creating_a_Farm
     }
 }
 
-namespace ISTA_220_Excercise_4A_Creating_a_Farm
+namespace Creating_a_Farm
 {
     
    public class Cow : Animal
@@ -147,7 +147,7 @@ namespace ISTA_220_Excercise_4A_Creating_a_Farm
    }
 }
 
-namespace ISTA_220_Excercise_4A_Creating_a_Farm
+namespace Creating_a_Farm
 {
     public class Pig : Animal
     {
@@ -176,7 +176,7 @@ namespace ISTA_220_Excercise_4A_Creating_a_Farm
     }
 }
 
-namespace ISTA_220_Excercise_4A_Creating_a_Farm
+namespace Creating_a_Farm
 {
     public class Horse : Animal
     {
