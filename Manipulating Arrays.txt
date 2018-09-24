@@ -1,0 +1,185 @@
+//this program is just dealing with manipulaing arrays
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Manipulating_Arrays
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arrA = { 0, 2, 4, 6, 8, 10 };
+            int[] arrB = { 1, 3, 5, 7, 9 };
+            int[] arrC = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9 };
+
+            PrintArray(arrA);
+            Console.WriteLine();
+            PrintArray(arrB);
+            Console.WriteLine();
+            PrintArray(arrC);
+            Console.WriteLine();
+
+            AddingArray();
+
+            Console.WriteLine("\nThese are the Reverse Arrays for A, B, C: ");
+            PrintArray(reverseArray(arrA));
+            Console.WriteLine();
+            PrintArray(reverseArray(arrB));
+            Console.WriteLine();
+            PrintArray(reverseArray(arrC));
+            Console.WriteLine();
+
+            Console.WriteLine("\nThese are the Arrays shifted according to the directions: ");
+            PrintArray(RotateArray(2, true, arrA));
+            Console.WriteLine();
+            PrintArray(RotateArray(2, false, arrB));
+            Console.WriteLine();
+            PrintArray(RotateArray(4, true, arrC));
+            Console.WriteLine();
+
+            Console.WriteLine("\nThese are the Arrays Sorted: ");
+            PrintArray(SortArray(arrA));
+            Console.WriteLine();
+            PrintArray(SortArray(arrB));
+            Console.WriteLine();
+            PrintArray(SortArray(arrC));
+            Console.WriteLine();
+
+
+            Console.ReadLine();
+        }
+
+        static void AddingArray()
+        {
+            int[][] arr = new int[3][];
+            arr[0] = new int[] { 0, 2, 4, 6, 8, 10 };
+            arr[1] = new int[] { 1, 3, 5, 7, 9 };
+            arr[2] = new int[] { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9 };
+
+
+            double sum0 = 0;
+            double average0 = 0;
+            int size0 = arr[0].Length;
+
+            for (int i = 0; i < arr[0].Length; i++)
+            {
+                sum0 += arr[0][i];
+            }
+            average0 = sum0 / size0; // sum divided by total elements in array
+
+            Console.WriteLine("\nthe Sum of Array A Element is: " + sum0);
+            Console.WriteLine("The Average Of Array A Element is : " + average0);
+            Console.WriteLine("The Length of Array A Element is: " + arr[0].Length);
+
+            double sum1 = 0;
+            double average1 = 0;
+            int size1 = arr[1].Length;
+
+            for (int i = 0; i < arr[1].Length; i++)
+            {
+                sum1 += arr[1][i];
+            }
+            average1 = sum1 / size1; // sum divided by total elements in array
+
+            Console.WriteLine("\nthe Sum of Array B Element is: " + sum1);
+            Console.WriteLine("The Average Of Array B Element is : " + average1);
+            Console.WriteLine("The Length of Array B Element is: " + arr[1].Length);
+
+            double sum2 = 0;
+            double average2 = 0;
+            int size2 = arr[2].Length;
+
+            for (int i = 0; i < arr[2].Length; i++)
+            {
+                sum2 += arr[2][i];
+            }
+            average2 = sum2 / size2; // sum divided by total elements in array
+
+            Console.WriteLine("\nthe Sum of Array C Element is: " + sum2);
+            Console.WriteLine("The Average Of Array C Element is : " + average2);
+            Console.WriteLine("The Length of Array C Element is: " + arr[2].Length);
+
+        }
+
+        static int[] reverseArray(int[] array)
+        {
+            int[] values = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                values[i] = array[array.Length - 1 - i];
+            }
+            return values;
+
+        }
+
+        static void PrintArray(int[] array)
+        {
+            foreach (int item in array)
+            {
+                Console.Write(item + " ");
+            }
+        }
+        
+
+        static int[] RotateArray(int placesnumber, bool rightleft, int[] intArray)
+        {
+            int[] RotateArray = new int[intArray.Length];
+            //True is rotate right
+            //False is rotate left
+
+            if (rightleft == true)
+            {
+                int ii = 0;
+                for(int i = 0; i < intArray.Length; i++)
+                {
+                    if(intArray.Length - ii - placesnumber == intArray.Length)
+                    {
+                        ii = intArray.Length - placesnumber;
+                    }
+                    RotateArray[i] = intArray[intArray.Length - ii - placesnumber];
+
+                    ii--;
+                }
+            }
+            else if (rightleft == false)
+            {
+                int ii = 0;
+                for(int i =0; i < intArray.Length; i++)
+                {
+                    if(ii + placesnumber == intArray.Length)
+                    {
+                        ii = 0 - placesnumber;
+                    }
+                    RotateArray[i] = intArray[ii + placesnumber];
+
+                    ii++;
+                }
+            }
+            return RotateArray;
+        }
+
+        static int[] SortArray(int[] intArray)
+        {
+            int num = 0;
+
+            for (int i = 0; i < intArray.Length - 1; i++)
+            {
+                for(int sort = 0; sort <intArray.Length - 1 - i; sort++)
+                {
+                    if (intArray[sort] > intArray[sort +1])
+                    {
+                        num = intArray[sort];
+                        intArray[sort] = intArray[sort+1];
+                        intArray[sort + 1] = num;
+                    }
+                }
+            }
+            return intArray;
+        }
+
+    }
+}
